@@ -6,17 +6,27 @@
 [![MICCAI](https://img.shields.io/badge/MICCAI-2026-lightblue)](https://arxiv.org/pdf/2607.01656)
 </div>
 
+## Overview
+<p align="center">
+  <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="100%">
+</p>
+
 Reference Implementation of paper "CALM: Interpretable Cross-Modal Alignment for Biomarker Discovery from Unpaired Data".
 
-### Imaging-Genetics Associations
-![Association](img/association.png)
+## Method
+<p align="center">
+  <img src="fig/model_architecture.png" alt="CALM model architecture" width="100%">
+</p>
 
-## Overview
-CALM discovers **interpretable associations between brain ROIs and genetic pathways from completely unpaired data** — neuroimaging and genetics drawn from disjoint populations. Pretrained per-entity encoders map each modality into a shared latent space via learned linear maps `W_I`, `W_G`; CALM aligns them by matching the class-conditional latent distributions (CMMD) while ensuring group separability (supervised contrastive), regularized toward orthogonality. The association matrix `A = W_Iᵀ W_G ∈ R^{n_ROI × n_pathway}` is the interpretable read-out. Trained on unimodal imaging and genetics repositories, CALM generalizes to an unseen paired cohort and surfaces immune and metabolic pathways linked to specific cortical regions in autism.
+## Imaging-Genetics Associations
+<p align="center">
+  <img src="fig/trait_bar_ab_bottom.png" alt="Imaging-genetics pathway–ROI associations" width="100%">
+</p>
 
-- **Imaging input:** FreeSurfer Brainnetome features — `n_ROI = 246` ROIs × `4` morphological features (volume, surface area, mean cortical thickness, std cortical thickness).
-- **Genetics input:** `n_pathway = 177` KEGG pathways × `6` GWAS traits.
-- **Train / test:** ABIDE I+II (imaging) + SSC (genetics) → tested on the paired ACE cohort.
+## Results
+<p align="center">
+  <img src="fig/scatter_and_snr_combined.png" alt="Association stability: unpaired CALM vs paired baseline" width="100%">
+</p>
 
 ## Getting Started
 
@@ -96,25 +106,15 @@ bash job_scripts/stage2_alignment.sh
 - `code/utils/` — `const.py` (paths), `add_argument.py` (CLI flags), `utils.py` (loaders).
 - `job_scripts/` — `stage1_imaging.sh`, `stage1_genetics.sh`, `stage2_alignment.sh` (5-fold launchers).
 
-## Method
-<p align="center">
-  <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="100%">
-</p>
-
-## Results
-### Quantitative Results
-CALM generalizes from unimodal training data to an unseen paired cohort, outperforming several state-of-the-art cross-modal methods and ablation baselines, and the learned pathway–ROI associations remain stable relative to a paired baseline.
-
-![](img/quantitative.png)
-
 ## Citation
 If any of the results in this paper or code are useful for your research, please cite the corresponding paper:
 
 ```
-@article{wang2026calm,
+@inproceedings{wang2026calm,
   title={CALM: Interpretable Cross-Modal Alignment for Biomarker Discovery from Unpaired Data},
   author={Wang, Jueqi and Jacokes, Zachary and Van Horn, John Darrell and Pelphrey, Kevin A. and Schatz, Michael C. and Venkataraman, Archana},
-  journal={arXiv preprint arXiv:2607.01656},
-  year={2026}
+  booktitle={Medical Image Computing and Computer-Assisted Intervention -- MICCAI 2026},
+  year={2026},
+  publisher={Springer}
 }
 ```
