@@ -39,6 +39,8 @@ bash job_scripts/stage2_alignment.sh
   <img src="fig/model_architecture.png" alt="CALM model architecture" width="100%">
 </p>
 
+Alignment is driven by two losses. A **class-conditional MMD** (`L_cmmd`) matches the imaging and genetics latent distributions *within each diagnostic group*, aligning the modalities without paired samples. A **supervised contrastive** loss (`L_con`) then pulls same-class samples together across modalities and pushes different classes apart, keeping the diagnostic groups separable — with an orthogonality regularizer (`L_orth`) preventing degenerate projections.
+
 ## Imaging-Genetics Associations
 <p align="center">
   <img src="fig/trait_bar_ab_bottom.png" alt="Imaging-genetics pathway–ROI associations" width="100%">
