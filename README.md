@@ -11,7 +11,7 @@
   <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
-CALM discovers interpretable associations between brain ROIs and genetic pathways from completely **unpaired** data. Linear transforms map imaging and genetics from disjoint cohorts into a shared latent space. The two cohorts are aligned by matching their class-conditional distributions, and the learned projections read out directly as interpretable ROI–pathway associations.
+CALM discovers interpretable ROI–pathway associations from completely **unpaired** data. Linear transforms map imaging and genetics from disjoint cohorts into a shared latent space, aligned by matching their class-conditional distributions.
 
 ## Getting Started
 
