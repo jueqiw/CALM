@@ -11,29 +11,12 @@
   <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
-## Method
-<p align="center">
-  <img src="fig/model_architecture.png" alt="CALM model architecture" width="100%">
-</p>
-
-## Imaging-Genetics Associations
-<p align="center">
-  <img src="fig/trait_bar_ab_bottom.png" alt="Imaging-genetics pathway–ROI associations" width="100%">
-</p>
-
-## Results
-<p align="center">
-  <img src="fig/scatter_and_snr_combined.png" alt="Association stability: unpaired CALM vs paired baseline" width="100%">
-</p>
-
 ## Getting Started
 
 ### Environment
 
 ```bash
-module load miniconda
-conda activate /projectnb/ace-genetics/jueqiw/software/venvs/conda_envs/torch2_conda
-# or: pip install torch numpy pandas scikit-learn monai nibabel nilearn matplotlib seaborn scipy
+pip install torch numpy pandas scikit-learn monai nibabel nilearn matplotlib seaborn scipy
 # (cvxopt is optional — only needed for the MK-MMD baseline)
 ```
 
@@ -103,6 +86,21 @@ bash job_scripts/stage2_alignment.sh
   `--modality {imaging,genetics}` (per-ROI imaging `E_I` or per-pathway genetics `E_G`).
 - `code/utils/` — `const.py` (paths), `add_argument.py` (CLI flags), `utils.py` (loaders).
 - `job_scripts/` — `stage1_imaging.sh`, `stage1_genetics.sh`, `stage2_alignment.sh` (5-fold launchers).
+
+## Method
+<p align="center">
+  <img src="fig/model_architecture.png" alt="CALM model architecture" width="100%">
+</p>
+
+## Imaging-Genetics Associations
+<p align="center">
+  <img src="fig/trait_bar_ab_bottom.png" alt="Imaging-genetics pathway–ROI associations" width="100%">
+</p>
+
+## Results
+<p align="center">
+  <img src="fig/scatter_and_snr_combined.png" alt="Association stability: unpaired CALM vs paired baseline" width="100%">
+</p>
 
 ## Citation
 If any of the results in this paper or code are useful for your research, please cite the corresponding paper:
