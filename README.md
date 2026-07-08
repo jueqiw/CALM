@@ -8,7 +8,7 @@
 
 ## Overview
 <p align="center">
-  <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="100%">
+  <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
 Reference Implementation of paper "CALM: Interpretable Cross-Modal Alignment for Biomarker Discovery from Unpaired Data".
