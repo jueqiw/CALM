@@ -11,6 +11,8 @@
   <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
+CALM discovers interpretable associations between brain ROIs and genetic pathways from completely **unpaired** data — neuroimaging and genetics drawn from disjoint populations. It aligns the two modalities in a shared latent space and reads out an ROI–pathway association matrix, surfacing immune and metabolic pathways linked to specific cortical regions in autism.
+
 ## Getting Started
 
 ### Environment
