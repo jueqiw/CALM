@@ -40,23 +40,11 @@ Expected on-disk format:
 
 ### Full 5-fold run (paper hyperparameters, two stages)
 
-All job scripts live in `job_scripts/`. The paper's procedure (Sec. 2.4) is two-stage:
-encoders + classifiers are pretrained (50 epochs), then the linear projections are trained (30
-epochs). Both stages use `λcmmd=5, λcon=5, λorth=0.01, τ=0.07, d=6, batch=64`, projector lr
-`1e-3`, encoder finetune lr `1e-5`, imaging feature noise `σ=0.15`.
-
-The scripts are plain bash (run each on your own machine/cluster; add your scheduler's
-directives if submitting to a queue):
-
-```bash
-# Stage 1 — pretrain the modality encoders (5-fold). Set each STAGE1_OUT first.
-bash job_scripts/stage1_imaging.sh     # per-ROI imaging encoder E_I
-bash job_scripts/stage1_genetics.sh    # per-pathway genetics encoder E_G
-
-# Stage 2 — cross-modal alignment (5-fold). Set IMG_CKPT_TMPL / GEN_CKPT_TMPL to the
-#           Stage-1 checkpoints (absolute paths), then:
-bash job_scripts/stage2_alignment.sh
-```
+The complete two-stage procedure (Sec. 2.4) is provided as ready-to-run scripts in
+`job_scripts/` — encoders + classifiers are pretrained first (`stage1_imaging.sh`,
+`stage1_genetics.sh`), then the linear projections are trained (`stage2_alignment.sh`) with the
+paper hyperparameters. Set the output/checkpoint paths at the top of each script, then run them
+in order.
 
 ### Repo layout
 
