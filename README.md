@@ -11,8 +11,6 @@
   <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
-Reference Implementation of paper "CALM: Interpretable Cross-Modal Alignment for Biomarker Discovery from Unpaired Data".
-
 ## Method
 <p align="center">
   <img src="fig/model_architecture.png" alt="CALM model architecture" width="100%">
