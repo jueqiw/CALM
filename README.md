@@ -23,7 +23,7 @@ Dataset paths are cluster-specific placeholders. Point them to your own data fir
 - Dataset / checkpoint roots → `code/utils/const.py`
 - Stage-1 output and checkpoint paths → `STAGE1_OUT` / `*_CKPT_TMPL` in `job_scripts/`
 
-Then run the two-stage procedure (Sec. 2.4) in order:
+Then run the two-stage procedure in order:
 
 ```bash
 # Stage 1 — pretrain the encoders
