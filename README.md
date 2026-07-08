@@ -17,7 +17,6 @@
 
 ```bash
 pip install torch numpy pandas scikit-learn monai nibabel nilearn matplotlib seaborn scipy
-# (cvxopt is optional — only needed for the MK-MMD baseline)
 ```
 
 ### Quick smoke test (no data required)
