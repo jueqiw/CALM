@@ -19,28 +19,10 @@
 pip install torch numpy pandas scikit-learn monai nibabel nilearn matplotlib seaborn scipy
 ```
 
-### Quick smoke test (no data required)
-
-The pipeline ships with a synthetic-data mode so you can verify it runs end-to-end without any
-real data or cluster paths:
-
-```bash
-cd code
-python3 main.py --use_synthetic_data --not_write_tensorboard \
-    --experiment_name=smoke --n_epochs=2 --batch_size=16 \
-    --output_features=6 --normalization=layer --use_mmd_alignment \
-    --alignment_coral_weight=5 --alignment_contrastive_weight=5 \
-    --alignment_orthogonality_weight=0.01 --alignment_tau=0.07 \
-    --genetics_learning_rate=0.001 --encoder_finetune_lr=1e-5 --imaging_feature_noise=0.15
-```
-
-This generates random pseudo data of the correct shapes, trains for 2 epochs, and prints the
-loss / ACC / AUC per epoch.
-
 ### Running on real data — paths to change
 
 All dataset paths are cluster-specific placeholders. **Point them to your own data before a real
-run** (the smoke test above bypasses all of them):
+run:**
 
 | What | Where to edit |
 |---|---|
