@@ -11,7 +11,7 @@
   <img src="fig/calm_model_explainer.gif" alt="CALM model overview" width="70%">
 </p>
 
-CALM discovers interpretable associations between brain ROIs and genetic pathways from completely **unpaired** data — neuroimaging and genetics drawn from disjoint populations. It aligns the two modalities in a shared latent space and reads out an ROI–pathway association matrix, surfacing immune and metabolic pathways linked to specific cortical regions in autism.
+CALM discovers interpretable associations between brain ROIs and genetic pathways from completely **unpaired** data. Linear transforms map imaging and genetics from disjoint cohorts into a shared latent space. The two cohorts are aligned by matching their class-conditional distributions, and the learned projections read out directly as interpretable ROI–pathway associations.
 
 ## Getting Started
 
@@ -19,10 +19,20 @@ CALM discovers interpretable associations between brain ROIs and genetic pathway
 pip install torch numpy pandas scikit-learn monai nibabel nilearn matplotlib seaborn scipy
 ```
 
-Dataset paths are cluster-specific placeholders — point them to your own data in
-`code/utils/const.py` and the `*_CKPT_TMPL` / `STAGE1_OUT` variables in `job_scripts/`. Then run
-the two-stage procedure (Sec. 2.4) from `job_scripts/`: pretrain the encoders
-(`stage1_imaging.sh`, `stage1_genetics.sh`), then train the projections (`stage2_alignment.sh`).
+Dataset paths are cluster-specific placeholders. Point them to your own data first:
+- Dataset / checkpoint roots → `code/utils/const.py`
+- Stage-1 output and checkpoint paths → `STAGE1_OUT` / `*_CKPT_TMPL` in `job_scripts/`
+
+Then run the two-stage procedure (Sec. 2.4) in order:
+
+```bash
+# Stage 1 — pretrain the encoders
+bash job_scripts/stage1_imaging.sh
+bash job_scripts/stage1_genetics.sh
+
+# Stage 2 — train the linear projections (alignment)
+bash job_scripts/stage2_alignment.sh
+```
 
 ## Method
 <p align="center">
