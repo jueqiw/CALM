@@ -46,11 +46,6 @@ Alignment is driven by two losses. A **class-conditional MMD** (`L_cmmd`) matche
   <img src="fig/trait_bar_ab_bottom.png" alt="Imaging-genetics pathway–ROI associations" width="100%">
 </p>
 
-## Results
-<p align="center">
-  <img src="fig/scatter_and_snr_combined.png" alt="Association stability: unpaired CALM vs paired baseline" width="100%">
-</p>
-
 ## Citation
 If any of the results in this paper or code are useful for your research, please cite the corresponding paper:
 
